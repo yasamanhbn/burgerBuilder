@@ -1,5 +1,6 @@
 import React from "react";
 import BurgerController from "./BurgerController/burgerController";
+import classes from './BurgerControls.module.css'
 
 const controls = [
     {label: 'salad'},
@@ -9,7 +10,7 @@ const controls = [
 ]
 const BurgerControls = () => {
     return (
-        <div>
+        <div className={classes.BurgerControllers}>
             {controls.map((index) =>
                 <BurgerController
                     label={index.label}

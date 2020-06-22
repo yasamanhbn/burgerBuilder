@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
-import Burger from './Component/Burger/burger'
-import BurgerControls from "./Component/BurgerControllers/BurgerControls";
+import BurgerBuilder from './Component/BurgerBuilder/BurgerBuilder'
 const App = ()=> {
   return (
     <div className="App">
-        <Burger/>
-        <BurgerControls/>
+      <BurgerBuilder/>
     </div>
   );
 }

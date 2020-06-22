@@ -4,10 +4,8 @@ import classes from './burgerController.module.css'
 const burgerController=(props)=>{
         return (
             <div>
-                <div className={classes.Div}>
-                    <label className={classes.label}>{props.label}</label>
-                </div>
-                <div className={classes.Div}>
+                <div className={classes.label}>{props.label}</div>
+                <div className={classes.BurgerController}>
                     <Button title='less'/>
                     <Button title='more'/>
                 </div>
