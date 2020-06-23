@@ -8,11 +8,12 @@ const controls = [
     {label: 'meat'},
     {label: 'bacon'}
 ]
-const BurgerControls = () => {
+const BurgerControls = (props) => {
     return (
         <div className={classes.BurgerControllers}>
             {controls.map((index) =>
                 <BurgerController
+                    clicked={()=>props.clicked(index.label)}
                     label={index.label}
                     key={index.label}
                 />

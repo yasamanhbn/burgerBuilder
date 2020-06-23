@@ -1,22 +1,26 @@
 import React, {Component} from "react";
 import Burger from "../Burger/burger";
 import BurgerControls from "../BurgerControllers/BurgerControls";
+import {connect} from 'react-redux'
+import * as actions from '../../redux/actions/actions'
 class BurgerBuilder extends Component{
     render() {
-        let ingredient={
-            Salad:0,
-            Bacon:0,
-            Cheese:0,
-            Meat:0
-        }
         return(
             <div>
-                <Burger ingredients={ingredient}/>
-                <BurgerControls/>
+                <Burger ingredients={this.props.ingredients}/>
+                <BurgerControls clicked={this.props.onIncrement}/>
             </div>
         )
     }
-
 }
-
-export default BurgerBuilder
+const mapStateToProps = state=>{
+    return{
+        ingredients: state.ingredients
+    }
+}
+const mapDispatchToProps = dispatch=>{
+    return{
+        onIncrement :(type)=>dispatch({type:actions.ADD_INGREDIENT ,ingredientType:type})
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(BurgerBuilder)
