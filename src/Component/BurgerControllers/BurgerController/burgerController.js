@@ -6,8 +6,8 @@ const burgerController=(props)=>{
             <div>
                 <div className={classes.label}>{props.label}</div>
                 <div className={classes.BurgerController}>
-                    <Button title='less' clicked={props.clicked}/>
-                    <Button title='more' clicked={props.clicked}/>
+                    <Button title='less' clicked={props.onDecrement}/>
+                    <Button title='more' clicked={props.onIncrement}/>
                 </div>
             </div>
         )

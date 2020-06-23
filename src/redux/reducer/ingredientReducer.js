@@ -19,6 +19,14 @@ const ingredientReducer = (state = initialState, action) => {
                     [action.ingredientType]: state.ingredients[action.ingredientType] + 1
                 }
             }
+        case myActions.REMOVE_INGREDIENT:
+            return {
+                ...state,
+                ingredients:{
+                    ...state.ingredients,
+                    [action.ingredientType]:state.ingredients[action.ingredientType] - 1
+                }
+            }
         default:
             return {
                 ...state

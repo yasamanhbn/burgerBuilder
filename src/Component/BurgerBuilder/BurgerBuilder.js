@@ -8,7 +8,8 @@ class BurgerBuilder extends Component{
         return(
             <div>
                 <Burger ingredients={this.props.ingredients}/>
-                <BurgerControls clicked={this.props.onIncrement}/>
+                <BurgerControls onIncrement={this.props.onIncrement}
+                                onDecrement={this.props.onDecrement}/>
             </div>
         )
     }
@@ -20,7 +21,8 @@ const mapStateToProps = state=>{
 }
 const mapDispatchToProps = dispatch=>{
     return{
-        onIncrement :(type)=>dispatch({type:actions.ADD_INGREDIENT ,ingredientType:type})
+        onIncrement :(type)=>dispatch({type:actions.ADD_INGREDIENT ,ingredientType:type}),
+        onDecrement :(type)=>dispatch({type:actions.REMOVE_INGREDIENT,ingredientType:type})
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(BurgerBuilder)

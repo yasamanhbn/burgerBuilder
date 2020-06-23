@@ -13,7 +13,8 @@ const BurgerControls = (props) => {
         <div className={classes.BurgerControllers}>
             {controls.map((index) =>
                 <BurgerController
-                    clicked={()=>props.clicked(index.label)}
+                    onIncrement={()=>props.onIncrement(index.label)}
+                    onDecrement={()=>props.onDecrement(index.label)}
                     label={index.label}
                     key={index.label}
                 />
