@@ -5,18 +5,28 @@ import {connect} from 'react-redux'
 import * as actions from '../../redux/actions/actions'
 class BurgerBuilder extends Component{
     render() {
+        let disabledInfo = {
+            ...this.props.ingredients
+        }
+        for(let key in disabledInfo){
+            disabledInfo[key]=disabledInfo[key] ? 0 : 1;
+        }
         return(
             <div>
                 <Burger ingredients={this.props.ingredients}/>
                 <BurgerControls onIncrement={this.props.onIncrement}
-                                onDecrement={this.props.onDecrement}/>
+                                onDecrement={this.props.onDecrement}
+                                disabledInfo={disabledInfo}
+                                price={this.props.price}
+                />
             </div>
         )
     }
 }
 const mapStateToProps = state=>{
     return{
-        ingredients: state.ingredients
+        ingredients: state.ingredients,
+        price : state.price
     }
 }
 const mapDispatchToProps = dispatch=>{

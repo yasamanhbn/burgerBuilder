@@ -11,12 +11,14 @@ const controls = [
 const BurgerControls = (props) => {
     return (
         <div className={classes.BurgerControllers}>
+            <p>PRICE IS {props.price}</p>
             {controls.map((index) =>
                 <BurgerController
                     onIncrement={()=>props.onIncrement(index.label)}
                     onDecrement={()=>props.onDecrement(index.label)}
                     label={index.label}
                     key={index.label}
+                    disabledInfo={props.disabledInfo}
                 />
             )}
         </div>
