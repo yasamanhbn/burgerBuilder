@@ -1,6 +1,7 @@
 import React from "react";
 import BurgerController from "./BurgerController/burgerController";
 import classes from './BurgerControls.module.css'
+import Button from '../UI/Button/Button'
 
 const controls = [
     {label: 'salad'},
@@ -11,7 +12,7 @@ const controls = [
 const BurgerControls = (props) => {
     return (
         <div className={classes.BurgerControllers}>
-            <p>PRICE IS {props.price}</p>
+            <p>PRICE IS {(props.price).toFixed(2)}</p>
             {controls.map((index) =>
                 <BurgerController
                     onIncrement={()=>props.onIncrement(index.label)}
@@ -21,6 +22,9 @@ const BurgerControls = (props) => {
                     disabledInfo={props.disabledInfo}
                 />
             )}
+            <Button disabled={!props.orderDisabled}
+                    clicked={props.purchaseHandler}
+                    className={classes.ORDER} title='ORDER'/>
         </div>
     )
 }

@@ -9,3 +9,13 @@
     padding: 10px 0;
     font-weight: bold;
 }
+.ORDER{
+    padding: 2%;
+    margin: 1%;
+    background: #e6b3cc;
+    border: solid #993366;
+    border-radius: 5px;
+    color: #993366;
+    outline: none;
+    transition: all 0.3s;
+}

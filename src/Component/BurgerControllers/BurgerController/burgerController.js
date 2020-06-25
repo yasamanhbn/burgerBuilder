@@ -1,5 +1,5 @@
 import React from "react";
-import Button from '../../Button/Button'
+import Button from '../../UI/Button/Button'
 import classes from './burgerController.module.css'
 const burgerController=(props)=>{
         return (
