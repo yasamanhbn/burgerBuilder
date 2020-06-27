@@ -1,11 +1,11 @@
+.main{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1% 2%;
+}
 .BurgerController{
     display: flex;
-    margin: 5px 2%;
+    margin: 5px 0 2%;
     text-align: center;
-
-}
-.Button{
-    display: inline;
 }
 .label{
     font-size: 30px;

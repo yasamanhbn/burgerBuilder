@@ -23,10 +23,9 @@ class BurgerBuilder extends Component {
             disabledInfo[key] = disabledInfo[key] ? 0 : 1;
             sum = disabledInfo[key] + sum;
         }
-        const orderSummery = this.state.purchaseOrder ?
-            <OrderSummery ingredients={this.props.ingredients}
+        const orderSummery =<OrderSummery ingredients={this.props.ingredients}
                           showed={this.state.purchaseOrder}
-                          price={this.props.price}/> : null
+                          price={this.props.price}/>
         return (
             <div>
                 <Burger ingredients={this.props.ingredients}/>

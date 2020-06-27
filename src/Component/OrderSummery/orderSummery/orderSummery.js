@@ -7,7 +7,7 @@ const orderSummery = (props)=>{
             )
         });
     return(
-        <div className={classes.orderSummery}>
+        <div>
             <h2>YOUR ORDER</h2>
             <p>A delicious burger with the following ingredients:</p>
             <ul>
@@ -15,6 +15,11 @@ const orderSummery = (props)=>{
             </ul>
             <strong>Total price: {props.price.toFixed(2)}</strong>
             <p>Continue to Checkout?</p>
+            <div>
+                <button  style={{color:'green'}}
+                        className={classes.BTN}>SUCCEED</button>
+                <button  style={{color:'red'}} className={classes.BTN}>DANGER</button>
+            </div>
         </div>
     )
 }

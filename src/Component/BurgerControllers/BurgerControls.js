@@ -13,6 +13,7 @@ const BurgerControls = (props) => {
     return (
         <div className={classes.BurgerControllers}>
             <p>PRICE IS {(props.price).toFixed(2)}</p>
+            <div className={classes.burgerBuilder}>
             {controls.map((index) =>
                 <BurgerController
                     onIncrement={()=>props.onIncrement(index.label)}
@@ -22,6 +23,7 @@ const BurgerControls = (props) => {
                     disabledInfo={props.disabledInfo}
                 />
             )}
+            </div>
             <Button disabled={!props.orderDisabled}
                     clicked={props.purchaseHandler}
                     className={classes.ORDER} title='ORDER'/>

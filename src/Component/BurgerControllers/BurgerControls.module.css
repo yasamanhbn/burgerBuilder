@@ -9,6 +9,11 @@
     padding: 10px 0;
     font-weight: bold;
 }
+.burgerBuilder{
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
 .ORDER{
     padding: 2%;
     margin: 1%;

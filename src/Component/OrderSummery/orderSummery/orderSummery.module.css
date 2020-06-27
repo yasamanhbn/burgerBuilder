@@ -1,11 +1,15 @@
-.orderSummery{
+.BTN{
+    padding: 2%;
+    margin: 2%;
+    background: transparent;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    z-index: 500;
-    width: 35%;
-    text-align: left;
-    padding: 1%;
-    font-size: 25px;
-    transition: all 0.5s;
-    border: solid darkgrey;
-    margin: 4px auto;
+    border: none;
+    outline: none;
 }
+.BTN:hover{
+    cursor: pointer;
+}
+.BTN:active{
+    box-shadow: none;
+}
+

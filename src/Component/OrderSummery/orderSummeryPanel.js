@@ -1,15 +1,15 @@
 import React from "react";
-
+import classes from './orderSummery.module.css'
 const orderSummeryPanel = (props)=>{
     return(
-        <div>
-            <div style={{
+            <div className={classes.Panel}
+                style={{
                 transition:'all 1s',
-                transform: props.showed ?'translateY(0)':'translateY(-200%)'
+                transform: props.showed ?'translateY(0)':'translateY(-300%)',
+                zIndex: '500'
             }}>
                 {props.children}
             </div>
-        </div>
     )
 }
 export default orderSummeryPanel;
