@@ -2,10 +2,10 @@ import React from "react";
 import NavigationItem from '../navigation-item/navigation-item'
 const navigation = ()=>{
     return(
-        <div>
-            <NavigationItem>order</NavigationItem>
+        <ul>
             <NavigationItem>burger builder</NavigationItem>
-        </div>
+            <NavigationItem>members</NavigationItem>
+        </ul>
     )
 }
 

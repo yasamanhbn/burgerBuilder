@@ -18,7 +18,9 @@ const orderSummery = (props)=>{
             <div>
                 <button  style={{color:'green'}}
                         className={classes.BTN}>SUCCEED</button>
-                <button  style={{color:'red'}} className={classes.BTN}>DANGER</button>
+                <button  style={{color:'red'}} className={classes.BTN}
+                         onClick={props.canceled}
+                >DANGER</button>
             </div>
         </div>
     )

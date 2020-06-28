@@ -13,7 +13,9 @@ class BurgerBuilder extends Component {
     purchaseHandler = () => {
         this.setState({purchaseOrder: true})
     }
-
+    backdropCanceled= ()=>{
+        this.setState({purchaseOrder:false})
+    }
     render() {
         let disabledInfo = {
             ...this.props.ingredients
@@ -25,11 +27,13 @@ class BurgerBuilder extends Component {
         }
         const orderSummery =<OrderSummery ingredients={this.props.ingredients}
                           showed={this.state.purchaseOrder}
+                          canceled={this.backdropCanceled}
                           price={this.props.price}/>
         return (
             <div>
                 <Burger ingredients={this.props.ingredients}/>
-                <OrderSummeryPanel showed={this.state.purchaseOrder}>
+                <OrderSummeryPanel showed={this.state.purchaseOrder}
+                                   backDropCanceled={this.backdropCanceled}>
                     {orderSummery}
                 </OrderSummeryPanel>
                 <BurgerControls onIncrement={this.props.onIncrement}

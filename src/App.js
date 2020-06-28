@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import BurgerBuilder from './Container/BurgerBuilder/BurgerBuilder'
+import Layout from './Container/layout'
 const App = ()=> {
   return (
     <div className="App">
-      <BurgerBuilder/>
+      <Layout/>
     </div>
   );
 }
