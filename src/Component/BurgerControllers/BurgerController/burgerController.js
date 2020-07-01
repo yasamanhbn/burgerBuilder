@@ -6,12 +6,13 @@ const burgerController = (props) => {
     return (
         <div className={classes.main}>
             <span className={classes.label}>{props.label}</span>
-                <div className={classes.BurgerController}>
-                    <Button title='less' clicked={props.onDecrement}
-                            disabled={props.disabledInfo[props.label]}/>
-                    <Button title='more' clicked={props.onIncrement}/>
-                </div>
+            <div className={classes.BurgerController}>
+                <Button title='less' clicked={props.onDecrement}
+                        disabled={!props.disabledInfo[props.label]}/>
+                <Button title='more' clicked={props.onIncrement}/>
+            </div>
         </div>
+
     )
 }
 

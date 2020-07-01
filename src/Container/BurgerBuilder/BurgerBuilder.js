@@ -22,8 +22,8 @@ class BurgerBuilder extends Component {
         }
         let sum = 0;
         for (let key in disabledInfo) {
-            disabledInfo[key] = disabledInfo[key] ? 0 : 1;
-            sum = disabledInfo[key] + sum;
+            disabledInfo[key] = disabledInfo[key] ? 1 : 0;
+            sum += disabledInfo[key];
         }
         const orderSummery =<OrderSummery ingredients={this.props.ingredients}
                           showed={this.state.purchaseOrder}

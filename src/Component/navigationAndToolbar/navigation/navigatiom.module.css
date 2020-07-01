@@ -1,0 +1,8 @@
+.Navigation{
+    text-align: right;
+}
+@media (max-width: 500px) {
+   .Navigation{
+       text-align: left;
+   }
+}

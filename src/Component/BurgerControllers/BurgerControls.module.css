@@ -3,6 +3,7 @@
     background-color: #cc6699;
     display: flex;
     flex-flow: column;
+    flex-wrap: wrap;
     align-items: center;
     box-shadow: 0 2px 1px #ccc;
     margin: auto;
@@ -11,8 +12,8 @@
 }
 .burgerBuilder{
     display: flex;
-    justify-content: space-between;
-    margin: 2%;
+    justify-content:space-around;
+    margin: 1%;
 }
 .ORDER{
     padding: 2%;
@@ -24,3 +25,14 @@
     outline: none;
     transition: all 0.3s;
 }
+@media (max-width: 800px) {
+    .burgerBuilder {
+        flex-direction: column;
+    }
+}
+@media (min-width: 800px) {
+    .burgerBuilder {
+        flex-direction: row;
+    }
+}
+

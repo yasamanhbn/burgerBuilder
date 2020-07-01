@@ -1,12 +1,28 @@
 .Li{
     display: inline;
-    margin:0 1%;
+    margin:0 2%;
     padding: 1%;
     list-style-type: none;
     background:#c6538c;
+    font-family: 'Pangolin', cursive;
+}
+.NavLink:hover{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+
 }
 .NavLink{
     font-weight: bold;
     color: #ecc6d9;
     text-decoration: none;
+}
+@media (max-width: 500px) {
+    .Li{
+        display: block;
+        margin:10px -20px;
+        padding: 0;
+        font-size: 20px;
+        width: 150px;
+    }
 }

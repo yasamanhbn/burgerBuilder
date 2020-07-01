@@ -1,0 +1,26 @@
+.Toolbar{
+    width: 100%;
+    background:#c6538c;
+    padding: 0.1%;
+}
+.Bar{
+    font-size: 50px;
+    font-weight: bolder;
+    float: left;
+    color: black;
+    margin: 1%;
+}
+@media (min-width: 500px) {
+    .Bar{
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .Navigation{
+        display: none;
+    }
+    .Toolbar{
+        height: 70px;
+        background: none;
+    }
+}
