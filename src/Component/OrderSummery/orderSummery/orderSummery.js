@@ -16,11 +16,11 @@ const orderSummery = (props)=>{
             <strong>Total price: {props.price.toFixed(2)}</strong>
             <p>Continue to Checkout?</p>
             <div>
-                <button  style={{color:'green'}}
-                        className={classes.BTN}>SUCCEED</button>
                 <button  style={{color:'red'}} className={classes.BTN}
                          onClick={props.canceled}
                 >DANGER</button>
+                <button  style={{color:'green'}}
+                         className={classes.BTN} onClick={props.purchaseContinued}>SUCCEED</button>
             </div>
         </div>
     )

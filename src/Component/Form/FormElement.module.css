@@ -1,0 +1,12 @@
+.Elem{
+    margin: 1%;
+}
+.label{
+    display: block;
+}
+.Input{
+    font-family: 'Pangolin', cursive;
+    border: none;
+    border-bottom: solid grey 3px;
+    outline: none;
+}

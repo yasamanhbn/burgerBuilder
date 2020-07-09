@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import OrderSummery from '../../Component/OrderSummery/orderSummery/orderSummery'
 import * as actions from '../../redux/actions/actions'
 import OrderSummeryPanel from "../../Component/OrderSummery/orderSummeryPanel";
+import {withRouter} from "react-router-dom";
 
 class BurgerBuilder extends Component {
     state = {
@@ -15,6 +16,9 @@ class BurgerBuilder extends Component {
     }
     backdropCanceled= ()=>{
         this.setState({purchaseOrder:false})
+    }
+    purchaseContinued=()=>{
+        this.props.history.push('/checkout');
     }
     render() {
         let disabledInfo = {
@@ -28,7 +32,9 @@ class BurgerBuilder extends Component {
         const orderSummery =<OrderSummery ingredients={this.props.ingredients}
                           showed={this.state.purchaseOrder}
                           canceled={this.backdropCanceled}
-                          price={this.props.price}/>
+                          price={this.props.price}
+                          purchaseContinued={this.purchaseContinued}
+        />
         return (
             <div>
                 <Burger ingredients={this.props.ingredients}/>
@@ -60,4 +66,4 @@ const mapDispatchToProps = dispatch => {
         onDecrement: (type) => dispatch({type: actions.REMOVE_INGREDIENT, ingredientType: type})
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(BurgerBuilder)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BurgerBuilder))

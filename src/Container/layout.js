@@ -1,21 +1,24 @@
 import React, {Component} from "react";
 import BurgerBuilder from "./BurgerBuilder/BurgerBuilder";
 import ToolBar from '../Component/navigationAndToolbar/Toolbar/toolbar'
-import {Route,Switch} from "react-router";
+import {Route, Switch} from "react-router";
 import Members from '../Component/Members/members'
 import SideDrawer from '../Component/navigationAndToolbar/SideDrawer/sideDrawer'
 import BackDrop from '../Component/UI/backDrop/backDrop'
+import Form from '../Component/Form/Form'
+
 class layout extends Component {
-    state={
-        barEnabled : false
+    state = {
+        barEnabled: false
     }
-    barClicked = ()=>{
-        this.setState({barEnabled:true})
+    barClicked = () => {
+        this.setState({barEnabled: true})
     }
     //for backDrop clicked
-    onclick=(props)=>{
-        this.setState({barEnabled:false})
+    onclick = () => {
+        this.setState({barEnabled: false})
     }
+
     render() {
         return (
             <div>
@@ -25,12 +28,9 @@ class layout extends Component {
                 </div>
                 <ToolBar barClicked={this.barClicked}/>
                 <Switch>
-                    <Route path='/' exact>
-                        <BurgerBuilder/>
-                    </Route>
-                    <Route path='/members'>
-                        <Members/>
-                    </Route>
+                    <Route path='/checkout' component={Form}/>
+                    <Route path='/members' component={Members}/>
+                    <Route path='/' exact component={BurgerBuilder}/>
                 </Switch>
             </div>
         )
