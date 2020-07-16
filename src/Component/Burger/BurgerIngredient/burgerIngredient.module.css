@@ -1,6 +1,6 @@
 .BreadBottom {
     height: 13%;
-    width: 70%;
+    width: 60%;
     background: linear-gradient(#F08E4A, #e27b36);
     border-radius: 0 0 30px 30px;
     box-shadow: inset -15px 0 #c15711;
@@ -9,7 +9,7 @@
 
 .BreadTop {
     height: 20%;
-    width: 70%;
+    width: 60%;
     background: linear-gradient(#bc581e, #e27b36);
     border-radius: 50% 50% 0 0;
     box-shadow: inset -15px 0 #c15711;
@@ -18,7 +18,7 @@
 }
 
 .Meat {
-    width: 70%;
+    width: 60%;
     height: 8%;
     background: linear-gradient(#7f3608, #702e05);
     margin: 1% auto;
@@ -26,7 +26,7 @@
 }
 
 .Cheese {
-    width: 80%;
+    width: 70%;
     height: 4.5%;
     margin: 1% auto;
     background: linear-gradient(#f4d004, #d6bb22);
@@ -34,7 +34,7 @@
 }
 
 .Salad {
-    width: 75%;
+    width: 65%;
     height: 7%;
     margin: 1% auto;
     background: linear-gradient(#228c1d, #91ce50);
@@ -42,7 +42,7 @@
 }
 
 .Bacon {
-    width: 70%;
+    width: 60%;
     height: 3%;
     background: linear-gradient(#bf3813, #c45e38);
     margin: 1% auto;

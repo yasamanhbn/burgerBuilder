@@ -1,9 +1,9 @@
 import React from "react";
-const members = ()=>{
+const orders = ()=>{
     return(
         <div>
 
         </div>
     )
 }
-export default members;
+export default orders;

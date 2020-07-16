@@ -5,7 +5,7 @@ const navigation = ()=>{
     return(
         <ul className={classes.Navigation}>
             <NavigationItem to='/'>burger builder</NavigationItem>
-            <NavigationItem to='/members'>members</NavigationItem>
+            <NavigationItem to='/orders'>orders</NavigationItem>
         </ul>
     )
 }

@@ -2,11 +2,10 @@ import React, {Component} from "react";
 import BurgerBuilder from "./BurgerBuilder/BurgerBuilder";
 import ToolBar from '../Component/navigationAndToolbar/Toolbar/toolbar'
 import {Route, Switch} from "react-router";
-import Members from '../Component/Members/members'
+import Orders from '../Component/Orders/orders'
 import SideDrawer from '../Component/navigationAndToolbar/SideDrawer/sideDrawer'
 import BackDrop from '../Component/UI/backDrop/backDrop'
-import Form from '../Component/Form/Form'
-
+import Checkout from "./Checkout/checkout";
 class layout extends Component {
     state = {
         barEnabled: false
@@ -28,9 +27,9 @@ class layout extends Component {
                 </div>
                 <ToolBar barClicked={this.barClicked}/>
                 <Switch>
-                    <Route path='/checkout' component={Form}/>
-                    <Route path='/members' component={Members}/>
-                    <Route path='/' exact component={BurgerBuilder}/>
+                    <Route path='/checkout' component={Checkout}/>
+                    <Route path='/orders' component={Orders}/>
+                    <Route path='/' component={BurgerBuilder}/>
                 </Switch>
             </div>
         )

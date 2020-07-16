@@ -1,10 +1,16 @@
 import React from "react";
 import classes from './FormElement.module.css'
-const formElement = (props)=>{
-    return(
+
+const formElement = (props) => {
+    let styled = [classes.Input]
+    if (props.isTouched && !props.isValid)
+        styled.push(classes.Error)
+
+    return (
         <div className={classes.Elem}>
-            <label className={classes.label}>{props.label}</label>
-            <input className={classes.Input}/>
+            <input className={styled.join(' ')} placeholder={props.label}
+                   onChange={props.changeHandler}
+            />
         </div>
     )
 }

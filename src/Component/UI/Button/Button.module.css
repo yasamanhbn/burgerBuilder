@@ -24,4 +24,5 @@
 }
 .Button:active{
     box-shadow: none;
+    outline: none;
 }

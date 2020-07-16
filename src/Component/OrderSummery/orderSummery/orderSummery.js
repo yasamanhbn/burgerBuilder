@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './orderSummery.module.css'
+import ScBtn from '../../UI/SucceedOrCancledBtn/SCBtn'
 const orderSummery = (props)=>{
     let orders=Object.keys(props.ingredients).map(igKey=>{
             return(
@@ -15,13 +15,7 @@ const orderSummery = (props)=>{
             </ul>
             <strong>Total price: {props.price.toFixed(2)}</strong>
             <p>Continue to Checkout?</p>
-            <div>
-                <button  style={{color:'red'}} className={classes.BTN}
-                         onClick={props.canceled}
-                >DANGER</button>
-                <button  style={{color:'green'}}
-                         className={classes.BTN} onClick={props.purchaseContinued}>SUCCEED</button>
-            </div>
+            <ScBtn canceled={props.canceled} purchaseContinued={props.purchaseContinued}/>
         </div>
     )
 }
