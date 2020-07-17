@@ -6,6 +6,8 @@ import OrderSummery from '../../Component/OrderSummery/orderSummery/orderSummery
 import * as actions from '../../redux/actions/actions'
 import OrderSummeryPanel from "../../Component/OrderSummery/orderSummeryPanel";
 import {withRouter} from "react-router-dom";
+import axios from 'axios'
+import withErrorHandling from "../withErrorHandler/withErrorHandling";
 
 class BurgerBuilder extends Component {
     state = {
@@ -14,13 +16,15 @@ class BurgerBuilder extends Component {
     purchaseHandler = () => {
         this.setState({purchaseOrder: true})
     }
-    backdropCanceled= ()=>{
-        this.setState({purchaseOrder:false})
+    backdropCanceled = () => {
+        this.setState({purchaseOrder: false})
     }
-    purchaseContinued=()=>{
+    purchaseContinued = () => {
         this.props.history.push('/checkout');
     }
+
     render() {
+
         let disabledInfo = {
             ...this.props.ingredients
         }
@@ -29,26 +33,28 @@ class BurgerBuilder extends Component {
             disabledInfo[key] = disabledInfo[key] ? 1 : 0;
             sum += disabledInfo[key];
         }
-        const orderSummery =<OrderSummery ingredients={this.props.ingredients}
-                          showed={this.state.purchaseOrder}
-                          canceled={this.backdropCanceled}
-                          price={this.props.price}
-                          purchaseContinued={this.purchaseContinued}
+        const orderSummery = <OrderSummery ingredients={this.props.ingredients}
+                                           showed={this.state.purchaseOrder}
+                                           canceled={this.backdropCanceled}
+                                           price={this.props.price}
+                                           purchaseContinued={this.purchaseContinued}
         />
         return (
             <div>
-                <Burger ingredients={this.props.ingredients}/>
-                <OrderSummeryPanel showed={this.state.purchaseOrder}
-                                   backDropCanceled={this.backdropCanceled}>
-                    {orderSummery}
-                </OrderSummeryPanel>
-                <BurgerControls onIncrement={this.props.onIncrement}
-                                onDecrement={this.props.onDecrement}
-                                disabledInfo={disabledInfo}
-                                price={this.props.price}
-                                orderDisabled={sum}
-                                purchaseHandler={this.purchaseHandler}
-                />
+                <div>
+                    <Burger ingredients={this.props.ingredients}/>
+                    <OrderSummeryPanel showed={this.state.purchaseOrder}
+                                       backDropCanceled={this.backdropCanceled}>
+                        {orderSummery}
+                    </OrderSummeryPanel>
+                    <BurgerControls onIncrement={this.props.onIncrement}
+                                    onDecrement={this.props.onDecrement}
+                                    disabledInfo={disabledInfo}
+                                    price={this.props.price}
+                                    orderDisabled={sum}
+                                    purchaseHandler={this.purchaseHandler}
+                    />
+                </div>
             </div>
         )
     }
@@ -66,4 +72,4 @@ const mapDispatchToProps = dispatch => {
         onDecrement: (type) => dispatch({type: actions.REMOVE_INGREDIENT, ingredientType: type})
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BurgerBuilder))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withErrorHandling(BurgerBuilder, axios)))

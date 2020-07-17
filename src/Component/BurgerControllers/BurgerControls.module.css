@@ -10,11 +10,7 @@
     padding: 10px 0;
     font-weight: bold;
 }
-.burgerBuilder{
-    display: flex;
-    justify-content:space-around;
-    margin: 1%;
-}
+
 .ORDER{
     padding: 2%;
     margin: 1%;
@@ -24,15 +20,5 @@
     color: #993366;
     outline: none;
     transition: all 0.3s;
-}
-@media (max-width: 800px) {
-    .burgerBuilder {
-        flex-direction: column;
-    }
-}
-@media (min-width: 800px) {
-    .burgerBuilder {
-        flex-direction: row;
-    }
 }
 

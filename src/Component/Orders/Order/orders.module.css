@@ -1,0 +1,11 @@
+.Spinner{
+    position: fixed;
+    left: 48%;
+    top:30%;
+    font-size: 80px;
+}
+.OrderP{
+    font-weight: bold;
+    text-align: center;
+    margin:2%;
+}

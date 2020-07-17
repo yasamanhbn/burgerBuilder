@@ -4,7 +4,7 @@ import classes from './Form.module.css'
 import Button from '../UI/Button/Button'
 import axios from 'axios'
 import {withRouter} from "react-router";
-import Spinner from '../UI/Spinner/Spinner'
+import Spinner from 'react-bootstrap/Spinner'
 
 class Form extends Component {
     state = {
@@ -128,7 +128,7 @@ inputChangeHandler = (e, identifier) => {
 }
 render()
 {
-
+    let form;
     let inputArray = [];
     for (let input in this.state.form) {
         inputArray.push({
@@ -136,8 +136,6 @@ render()
             config: this.state.form[input]
         })
     }
-
-    let form =<Spinner/>;
     if (!this.state.signIn) {
         form = inputArray.map(elem => {
             return <FormElement label={elem.id}
@@ -160,6 +158,10 @@ render()
             }
         })
     }
+    if(this.state.loading)
+        form =<Spinner animation="border" role="status" variant="success" size='lg'>
+            <span className="sr-only">Loading...</span>
+        </Spinner>
     return (
         <div className={classes.Form}>
             <form>

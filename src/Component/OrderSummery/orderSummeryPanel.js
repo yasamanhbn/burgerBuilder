@@ -8,7 +8,7 @@ const orderSummeryPanel = (props)=>{
             <div className={classes.Panel}
                 style={{
                 transition:'all 1s',
-                transform: props.showed ?'translateY(0)':'translateY(-300%)',
+                transform: props.showed ?'translateY(0)':'translateY(-650%)',
                 zIndex: '500'
             }}>
                 {props.children}
