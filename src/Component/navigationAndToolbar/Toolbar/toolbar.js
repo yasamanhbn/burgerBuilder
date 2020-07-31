@@ -8,7 +8,7 @@ const toolbar = (props) => {
                 <i className="fa fa-bars"/>
             </div>
             <div className={classes.Navigation}>
-                <Navigation/>
+                <Navigation isAuth={props.isAuth}/>
             </div>
         </div>
     )

@@ -3,18 +3,19 @@ import Burger from "../../Component/Burger/burger";
 import BurgerControls from "../../Component/BurgerControllers/BurgerControls";
 import {connect} from 'react-redux'
 import OrderSummery from '../../Component/OrderSummery/orderSummery/orderSummery'
-import * as actions from '../../redux/actions/actions'
+import * as burgerBuilderActions from '../../redux/actions/index'
 import OrderSummeryPanel from "../../Component/OrderSummery/orderSummeryPanel";
 import {withRouter} from "react-router-dom";
-import axios from 'axios'
-import withErrorHandling from "../withErrorHandler/withErrorHandling";
 
 class BurgerBuilder extends Component {
     state = {
         purchaseOrder: false
     }
     purchaseHandler = () => {
-        this.setState({purchaseOrder: true})
+        if(this.props.isAuth)
+            this.setState({purchaseOrder: true})
+        else
+            this.props.history.push("/Auth");
     }
     backdropCanceled = () => {
         this.setState({purchaseOrder: false})
@@ -53,6 +54,7 @@ class BurgerBuilder extends Component {
                                     price={this.props.price}
                                     orderDisabled={sum}
                                     purchaseHandler={this.purchaseHandler}
+                                    isAuth={this.props.isAuth}
                     />
                 </div>
             </div>
@@ -62,14 +64,15 @@ class BurgerBuilder extends Component {
 
 const mapStateToProps = state => {
     return {
-        ingredients: state.ingredients,
-        price: state.price
+        ingredients: state.ingreReducer.ingredients,
+        price: state.ingreReducer.price,
+        isAuth:state.authReducer.token!==null
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        onIncrement: (type) => dispatch({type: actions.ADD_INGREDIENT, ingredientType: type}),
-        onDecrement: (type) => dispatch({type: actions.REMOVE_INGREDIENT, ingredientType: type})
+        onIncrement: (type) => dispatch(burgerBuilderActions.addIngredient(type)),
+        onDecrement: (type) => dispatch(burgerBuilderActions.removeIngredient(type))
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withErrorHandling(BurgerBuilder, axios)))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BurgerBuilder))

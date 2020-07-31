@@ -32,7 +32,7 @@ const BurgerControls = (props) => {
             </Container>
             <Button disabled={!props.orderDisabled}
                     clicked={props.purchaseHandler}
-                    className={classes.ORDER} title='ORDER'/>
+                    className={classes.ORDER} title={props.isAuth?'ORDER NOW':"FIRST SIGN IN"}/>
         </div>
 
     )

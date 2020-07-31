@@ -6,6 +6,10 @@ import Orders from '../Component/Orders/orders'
 import SideDrawer from '../Component/navigationAndToolbar/SideDrawer/sideDrawer'
 import BackDrop from '../Component/UI/backDrop/backDrop'
 import Checkout from "./Checkout/checkout";
+import Auth from './Auth/auth'
+import {connect} from "react-redux"
+import Logout from '../Container/Auth/logout/logout'
+
 class layout extends Component {
     state = {
         barEnabled: false
@@ -22,18 +26,24 @@ class layout extends Component {
         return (
             <div>
                 <div>
-                    <SideDrawer showed={this.state.barEnabled}/>
+                    <SideDrawer showed={this.state.barEnabled} isAuth={this.props.isAuth}/>
                     <BackDrop showed={this.state.barEnabled} onClicked={this.onclick}/>
                 </div>
-                <ToolBar barClicked={this.barClicked}/>
+                <ToolBar barClicked={this.barClicked} isAuth={this.props.isAuth}/>
                 <Switch>
                     <Route path='/checkout' component={Checkout}/>
                     <Route path='/orders' component={Orders}/>
+                    <Route path='/Auth' component={Auth}/>
+                    <Route path='/logout' component={Logout}/>
                     <Route path='/' component={BurgerBuilder}/>
                 </Switch>
             </div>
         )
     }
 }
-
-export default layout
+const mapStateToProps = state=>{
+    return{
+        isAuth:state.authReducer.token
+    }
+}
+export default connect(mapStateToProps)(layout)

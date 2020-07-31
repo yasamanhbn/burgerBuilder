@@ -4,8 +4,7 @@ import {Row, Col, Container} from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner'
 import Order from './Order/order'
 import classes from './Order/orders.module.css'
-import WithErrorHandler from '../../Container/withErrorHandler/withErrorHandling'
-
+import {connect} from 'react-redux'
 class Orders extends Component {
     state = {
         fetchOrders: [],
@@ -15,9 +14,10 @@ class Orders extends Component {
     componentDidMount() {
         this.setState({loading: true})
         let fetchOrders = []
-        axios.get('https://burger-builder-23f15.firebaseio.com/orders.json')
-            .then(respond => {
-                let num = 1;
+        const token = this.props.token
+        axios.get('https://burger-builder-23f15.firebaseio.com/orders.json?auth='+token)
+            .then(respond=>{
+                let num = 1
                 for (let key in respond.data) {
                     fetchOrders.push({
                         ...respond.data[key],
@@ -33,7 +33,6 @@ class Orders extends Component {
             .catch(error => {
                 console.log(error)
             })
-
     }
 
     render() {
@@ -63,5 +62,9 @@ class Orders extends Component {
         )
     }
 }
-
-export default WithErrorHandler(Orders,axios);
+const mapStateToProps = state=>{
+    return{
+        token:state.authReducer.token
+    }
+}
+export default connect(mapStateToProps)(Orders)

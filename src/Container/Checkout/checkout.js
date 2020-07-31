@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Route, withRouter} from "react-router";
 import Burger from '../../Component/Burger/burger'
 import ScBtn from '../../Component/UI/SucceedOrCancledBtn/SCBtn'
-import Form from '../../Component/Form/Form'
+import Form from '../../Component/Form/contactData'
 
 class Checkout extends Component {
     canceledHandler = () => {
@@ -30,8 +30,8 @@ class Checkout extends Component {
 
 const mapStateToProps = state => {
     return {
-        ingredients: state.ingredients,
-        price: state.price
+        ingredients: state.ingreReducer.ingredients,
+        price: state.ingreReducer.price
     }
 }
 export default connect(mapStateToProps)(withRouter(Checkout))
