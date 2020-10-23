@@ -26,7 +26,7 @@
     box-shadow: none;
     outline: none;
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .Button{
         font-size: 18px;
         margin: 5px 10px;
