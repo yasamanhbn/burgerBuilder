@@ -11,3 +11,8 @@
 .SignIn:hover{
     cursor: pointer;
 }
+@media (max-width: 500px) {
+    .SignIn{
+        font-size: 14px;
+    }
+}

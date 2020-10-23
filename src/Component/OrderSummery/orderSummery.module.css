@@ -12,3 +12,8 @@
     font-size: 25px;
     transition: all 0.5s;
 }
+@media (max-width: 500px) {
+    .Panel{
+        font-size: 16px;
+    }
+}
