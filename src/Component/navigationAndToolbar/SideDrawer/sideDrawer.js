@@ -6,7 +6,7 @@ const sideDrawer = (props) => {
     return (
         props.showed?
     <div className={classes.SideDrawer}>
-        <Navigation/>
+        <Navigation isAuth={props.isAuth}/>
     </div> : null
 )
 }

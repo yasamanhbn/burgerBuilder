@@ -2,6 +2,7 @@ import React from "react";
 import classes from './toolbar.module.css'
 import Navigation from '../navigation/navigation'
 const toolbar = (props) => {
+
     return (
         <div className={classes.Toolbar}>
             <div className={classes.Bar} onClick={props.barClicked}>
