@@ -13,7 +13,9 @@
     transition: all 0.5s;
 }
 @media (max-width: 500px) {
-    .Panel{
+    .Panel {
         font-size: 16px;
+        width: 85%;
+        left: 2%;
     }
 }

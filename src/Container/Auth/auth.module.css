@@ -2,6 +2,7 @@
     width: 40%;
     height: 45%;
     margin: 3% auto;
+    font-size: 10px;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .SignIn{
@@ -13,6 +14,11 @@
 }
 @media (max-width: 500px) {
     .SignIn{
+        font-size: 17px;
+    }
+    .Auth{
+        width: 90%;
+        height: 50%;
         font-size: 14px;
     }
 }

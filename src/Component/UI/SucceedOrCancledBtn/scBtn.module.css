@@ -12,3 +12,9 @@
 .BTN:active{
     box-shadow: none;
 }
+@media(max-width: 500px) {
+    .BTN{
+        font-size: 15px;
+    }
+
+}

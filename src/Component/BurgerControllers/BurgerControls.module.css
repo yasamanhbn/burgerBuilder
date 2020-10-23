@@ -21,4 +21,9 @@
     outline: none;
     transition: all 0.3s;
 }
+@media(max-width: 500px) {
+    p{
+        font-size: 20px;
+    }
 
+}
